@@ -72,12 +72,10 @@ namespace spi_flash
 
             conn.Write("1");
             Console.WriteLine(readString());
-            checkEnd();
 
             conn.Write("r");
             string curChipId = readString();
             Console.WriteLine(curChipId);
-            checkEnd();
 
             if (curChipId != chipId) {
                 throw new Exception("Chip ID incorrect");
